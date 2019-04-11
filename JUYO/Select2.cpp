@@ -23,7 +23,7 @@ void print2 (uchar *input)
 
 	/* Performing RC4plus */
 
-	Rplus->RC4plus_Encrypt ((uchar*)input, key_temp_RC4plus, cipher);
+	Rplus->Encrypt ((uchar*)input, key_temp_RC4plus, cipher);
 	
 	int len_Blowfish_key = strlen((const char*)B->Blowfish_key());
 	uchar *key_temp_Blowfish = new(nothrow)uchar[len_Blowfish_key];
@@ -38,5 +38,8 @@ void print2 (uchar *input)
 	delete [ ] key_temp_RC4plus;
 	delete [ ] key_temp_Blowfish;
 	delete [ ] cipher;
+	delete Rplus;
+	delete B;	
+
 }
 
