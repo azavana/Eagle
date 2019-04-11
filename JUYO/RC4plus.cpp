@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void RC4plus::KSA_RC4plus (char *key, uchar S[256])
+void RC4plus::KSA (char *key, uchar S[256])
 {
 	for (int i = 0; i < 256; i++)
 		S[i] = i;
@@ -19,7 +19,7 @@ void RC4plus::KSA_RC4plus (char *key, uchar S[256])
 	return;
 }
 
-void RC4plus::PRGA_RC4plus (uchar S[256], uchar *plaintext, uchar *ciphertext)
+void RC4plus::PRGA (uchar S[256], uchar *plaintext, uchar *ciphertext)
 {
 	int i = 0;
 	int j = 0;
@@ -38,11 +38,11 @@ void RC4plus::PRGA_RC4plus (uchar S[256], uchar *plaintext, uchar *ciphertext)
 	return;
 }
 
-void RC4plus::RC4plus_Encrypt (uchar *plaintext, char *RC4plus_key, uchar *ciphertext)
+void RC4plus::Encrypt (uchar *plaintext, char *RC4plus_key, uchar *ciphertext)
 {
 	uchar S[256];
-	KSA_RC4plus(RC4plus_key, S);
-	PRGA_RC4plus (S,plaintext,ciphertext);
+	KSA (RC4plus_key, S);
+	PRGA (S,plaintext,ciphertext);
 
 	return;
 }
