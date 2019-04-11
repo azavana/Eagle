@@ -1,5 +1,5 @@
-Main.exe : Blowfish.o RC4A.o RC4plus.o VMPC.o Select1.o Select2.o Select3.o Main.o
-		 c++ -Wall Blowfish.o RC4A.o RC4plus.o VMPC.o Select1.o Select2.o Select3.o Main.o -o Main.exe
+all : Blowfish.o RC4A.o RC4plus.o VMPC.o Select1.o Select2.o Select3.o Main.o
+		 c++ -Wall Blowfish.o RC4A.o RC4plus.o VMPC.o Select1.o Select2.o Select3.o Main.o -o all
 
 Blowfish.o : Blowfish.cpp Blowfish.h ORIG_S_P.h
 		   c++ -c Blowfish.cpp
