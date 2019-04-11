@@ -6,7 +6,7 @@
 using namespace std;
 
 
-void RC4A::KSA_RC4A (char *key, uchar S[256])
+void RC4A::KSA (char *key, uchar S[256])
 {
 	for (int i = 0; i < 256; i++)
 		S[i] = i;
@@ -47,13 +47,13 @@ void RC4A::PRGA_RC4A (uchar S1[256], uchar S2[256], uchar *plaintext, uchar *cip
 	return;
 }
 
-void RC4A::RC4A_Encrypt (uchar *plaintext, char *RC4A_key, uchar *ciphertext)
+void RC4A::Encrypt (uchar *plaintext, char *RC4A_key, uchar *ciphertext)
 {
 	uchar S1[256];
 	uchar S2[256];
 
-	KSA_RC4A (RC4A_key, S1);
-	KSA_RC4A (RC4A_key, S2);
+	KSA (RC4A_key, S1);
+	KSA (RC4A_key, S2);
 	PRGA_RC4A (S1,S2,plaintext,ciphertext);
 	
 	return;
