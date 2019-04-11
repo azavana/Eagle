@@ -6,7 +6,7 @@
 using namespace std;
 
 
-void VMPC::KSA_VMPC (char *key, uchar S[256])
+void VMPC::KSA (char *key, uchar S[256])
 {
 	int j = 0;
 
@@ -21,7 +21,7 @@ void VMPC::KSA_VMPC (char *key, uchar S[256])
 	return;
 }
 
-void VMPC::PRGA_VMPC (uchar S[256], uchar *plaintext, uchar *ciphertext)
+void VMPC::PRGA (uchar S[256], uchar *plaintext, uchar *ciphertext)
 {
 	int i = 0;
 	int j, K;
@@ -37,11 +37,11 @@ void VMPC::PRGA_VMPC (uchar S[256], uchar *plaintext, uchar *ciphertext)
 	return;
 }
 
-void VMPC::VMPC_Encrypt (uchar *plaintext, char *key, uchar *ciphertext)
+void VMPC::Encrypt (uchar *plaintext, char *key, uchar *ciphertext)
 {
 	uchar S[256];
-	KSA_VMPC(key,S);
-	PRGA_VMPC(S,plaintext,ciphertext);
+	KSA (key,S);
+	PRGA (S,plaintext,ciphertext);
 	
 	return;
 }
