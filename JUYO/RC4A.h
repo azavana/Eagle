@@ -6,11 +6,11 @@
 class RC4A: public Core
 {
 	public:
-		void RC4A_Encrypt (uchar *plaintext, char *RC4A_key, uchar *ciphertext);
+		void Encrypt (uchar *plaintext, char *RC4A_key, uchar *ciphertext);
 		char *RC4A_key();
 
 	protected:
-		void KSA_RC4A (char *key, uchar S[256]);
+		void KSA (char *key, uchar S[256]);
 		void PRGA_RC4A (uchar S1[256], uchar S2[256], uchar *plaintext, uchar *ciphertext);
 };
 
