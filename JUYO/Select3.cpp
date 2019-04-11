@@ -24,7 +24,7 @@ void print3 (uchar *input)
 
 	/* Performing VMPC */
 
-	V->VMPC_Encrypt ((uchar*)input, key_temp_VMPC, cipher);
+	V->Encrypt ((uchar*)input, key_temp_VMPC, cipher);
 	
 	int len_Blowfish_key = strlen((const char*)B->Blowfish_key());
 	uchar *key_temp_Blowfish = new(nothrow)uchar[len_Blowfish_key];
@@ -39,5 +39,8 @@ void print3 (uchar *input)
 	delete [ ] key_temp_VMPC;
 	delete [ ] key_temp_Blowfish;
 	delete [ ] cipher;
+	delete V;
+	delete B;
+
 }
 
