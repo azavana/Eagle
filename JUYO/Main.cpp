@@ -11,6 +11,7 @@ GDB : Version 8.2 */
 #include "Blowfish.h"
 #include "RC4A.h"
 #include "RC4plus.h"
+#include "Spritz.h"
 #include "VMPC.h"
 #include "print.h"
 
@@ -30,7 +31,7 @@ main ()
 	fgets ((char*)clear_message,MAX,stdin);
 
 	srand(time(NULL));
-	int random = rand() % 3;
+	int random = rand() % 4;
 
 	if (random == 0)
 	{
@@ -46,6 +47,11 @@ main ()
 	{
 		fprintf(stdout,"\n\n\t [ ENCRYPTED MESSAGE (Blowfish_VMPC) ] >> ");
 		print3 (clear_message);
+	}
+	else if (random == 3)
+	{
+		fprintf(stdout, "\n\n\t [ ENCRYPTED MESSAGE (Blowfish_Spritz) ] >> ");
+		print4 (clear_message);
 	}
 
 }
