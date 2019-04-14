@@ -1,8 +1,8 @@
 BIN = Main
 
 OBJECTS = Blowfish.o RC4A.o RC4plus.o \
-		VMPC.o Select1.o Select2.o \
-		Select3.o Main.o
+		Spritz.o VMPC.o Select1.o \
+		Select2.o Select3.o Select4.o Main.o
 
 CC = g++ 
 
@@ -18,6 +18,9 @@ RC4A.o : RC4A.cpp RC4A.h
 RC4plus.o : RC4plus.cpp RC4plus.h
 	       $(CC) -c RC4plus.cpp
 
+Spritz.o : Spritz.cpp Spritz.h
+		 $(CC) -c Spritz.cpp
+
 VMPC.o : VMPC.cpp VMPC.h
 		$(CC) -c VMPC.cpp
 
@@ -30,8 +33,11 @@ Select2.o : Select2.cpp Blowfish.h RC4plus.h print.h
 Select3.o : Select3.cpp Blowfish.h VMPC.h print.h
 		$(CC) -c Select3.cpp
 
-Main.o : Main.cpp Blowfish.h RC4A.h RC4plus.h VMPC.h print.h
-		$(CC) -c Main.cpp
+Select4.o : Select4.cpp Blowfish.h Spritz.h print.h
+		  $(CC) -c Select4.cpp
+
+Main.o : Main.cpp Blowfish.h RC4A.h RC4plus.h Spritz.h VMPC.h print.h
+	    $(CC) -c Main.cpp
 
 .PHONY: clean
 clean: 
