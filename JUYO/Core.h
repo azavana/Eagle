@@ -19,6 +19,7 @@ class Core
 		uchar *Blowfish_key();
 		char *RC4A_key();
 		char *RC4plus_key();
+		char *Spritz_key();
 		char *VMPC_key();
 		~Core(void); // Destructor
 
