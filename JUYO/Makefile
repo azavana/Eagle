@@ -1,9 +1,10 @@
-# $(BIN)
 BIN = Main
-# $(OBJECTS)
-OBJECTS = Blowfish.o RC4A.o RC4plus.o VMPC.o Select1.o Select2.o Select3.o Main.o
-# $(CC)
-CC = g++
+
+OBJECTS = Blowfish.o RC4A.o RC4plus.o \
+		VMPC.o Select1.o Select2.o \
+		Select3.o Main.o
+
+CC = g++ 
 
 all : $(OBJECTS)
 	 $(CC) -Wall $(OBJECTS) -o $(BIN) 
@@ -31,3 +32,7 @@ Select3.o : Select3.cpp Blowfish.h VMPC.h print.h
 
 Main.o : Main.cpp Blowfish.h RC4A.h RC4plus.h VMPC.h print.h
 		$(CC) -c Main.cpp
+
+.PHONY: clean
+clean: 
+	rm -f $(OBJECTS) Main
