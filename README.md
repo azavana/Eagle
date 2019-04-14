@@ -1,8 +1,9 @@
 # About
-Random Lightweight encryption program based on Blowfish, RC4A, RC4plus and VMPC. The program choose randomly between the following combination:
+Random Lightweight encryption program based on Blowfish, RC4A, RC4plus, Spritz and VMPC. The program choose randomly between the following combination:
   - Blowfish_RC4A
   - Blowfish_RC4plus
   - Blowfish_VMPC
+  - Blowfish_Spritz
 
 THE PROGRAM IS UNDER GPL 3.0 LICENSE.
 
@@ -14,6 +15,7 @@ THE PROGRAM IS UNDER GPL 3.0 LICENSE.
   - print.h (print function)
   - RC4A.h (Child class)
   - RC4plus.h (Child class)
+  - Spritz.h (Child class)
   - VMPC.h (Child class)
   
 - Cpp files:
@@ -23,6 +25,7 @@ THE PROGRAM IS UNDER GPL 3.0 LICENSE.
   - Select3.cpp
   - RC4A.cpp
   - RC4plus.cpp
+  - Spritz.cpp
   - VMPC.cpp
   - Main.cpp
 
@@ -32,4 +35,3 @@ THE PROGRAM IS UNDER GPL 3.0 LICENSE.
 - 1) Download the program
 - 2) In command line, go to the folder containing the downloaded program
 - 3) Type make and press enter
-- 4) Enjoy
